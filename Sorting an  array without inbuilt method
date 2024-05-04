@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.Arrays;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the 8 elements into the array");
+        int[] arr= new int[8];
+        for(int i=0;i<8;i++){
+            arr[i]=s.nextInt();
+        }
+        Arrays.sort(arr);
+        System.out.println("Sorted Array");
+        for(int n1:arr){
+            System.out.print(n1+ "  " );
+        }
+        System.out.println("");
+        System.out.println("Reversed Array");
+        int arr2[]=new int[8];
+        int j=0;
+        for(int i=7;i>=0;--i){
+           arr2[j]=arr[i];
+            j++;
+        }
+        for(int n:arr2){
+            System.out.print(n+"  ");
+        }
+    }
+}
