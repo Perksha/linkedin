@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class HelloWorld {
+    public static int convert(int n1,int n2,int b){
+        int sum=0,power=1,carry=0,ans=0,d1=0,d2=0;
+        while(n1>0||n2>0||carry>0){
+            d1=n1%10;
+            d2=n2%10;
+            sum=d1+d2+carry;
+            ans=ans+(sum%b)*power;
+            carry=sum/b;
+    
+            power=power*10;
+            n1=n1/10;
+            n2=n2/10;
+        }
+        return ans;
+    }
+    public static void main(String[] args) {
+        System.out.println("Convert");
+        Scanner s=new Scanner(System.in);
+        int n1=s.nextInt();
+        int n2=s.nextInt();
+        int b=s.nextInt();
+        int key=convert(n1,n2,b);
+        System.out.println(key);
+    }
+}
